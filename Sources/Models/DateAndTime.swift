@@ -970,14 +970,15 @@ extension Scanner {
 	public func fhir_scanString(_ searchString: String) -> String? {
         
         //TME: don't need this compiler directive anymore in swift 4
-//		#if os(Linux)
+//		# if os(Linux)
 //		return scanString(string: searchString)
-//		#else
+//		# else
 		var str: NSString?
 		if scanString(searchString, into: &str) {
             
             if let tmpStr = str {
-                tmpStr2: String?
+                
+                var tmpStr2: String?
                 tmpStr2 = String(tmpStr)
                 
                 return tmpStr2 // str as String?
@@ -987,7 +988,7 @@ extension Scanner {
 			
 		}
 		return nil
-//		#endif
+//		# endif
 	}
 	
 	public func fhir_scanCharacters(from set: CharacterSet) -> String? {
@@ -1006,11 +1007,11 @@ extension Scanner {
 		var int = 0
         
         //TME: don't need this compiler directive anymore in swift 4
-//		#if os(Linux)
+//		# if os(Linux)
 //		let flag = scanInteger(&int)
-//		#else
+//		# else
 		let flag = scanInt(&int)
-//		#endif
+//		# endif
 		return flag ? int : nil
 	}
 }

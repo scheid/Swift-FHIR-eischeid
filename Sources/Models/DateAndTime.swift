@@ -973,9 +973,18 @@ extension Scanner {
 //		#if os(Linux)
 //		return scanString(string: searchString)
 //		#else
-		var str: String?
+		var str: NSString?
 		if scanString(searchString, into: &str) {
-			return str as String?
+            
+            if let tmpStr = str {
+                tmpStr2: String?
+                tmpStr2 = String(tmpStr)
+                
+                return tmpStr2 // str as String?
+            } else {
+                return nil
+            }
+			
 		}
 		return nil
 //		#endif

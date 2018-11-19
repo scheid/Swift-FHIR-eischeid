@@ -9,7 +9,7 @@
 import PackageDescription
 
 let package = Package(
-	name: "SwiftFHIR",
+	name: "SwiftFHIReischeid",
 	targets: [
 		Target(name: "Models"),
 		Target(name: "Client", dependencies: [.Target(name: "Models")]),

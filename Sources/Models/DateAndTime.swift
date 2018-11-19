@@ -959,23 +959,26 @@ Extend Scanner to account for interface differences between macOS and Linux (as 
 extension Scanner {
 	
 	public var fhir_isAtEnd: Bool {
-		#if os(Linux)
-		return atEnd
-		#else
+        //TME: don't need this compiler directive anymore in swift 4
+//		#if os(Linux)
+//		return atEnd
+//		#else
 		return isAtEnd
-		#endif
+//		#endif
 	}
 	
 	public func fhir_scanString(_ searchString: String) -> String? {
-		#if os(Linux)
-		return scanString(string: searchString)
-		#else
-		var str: NSString?
+        
+        //TME: don't need this compiler directive anymore in swift 4
+//		#if os(Linux)
+//		return scanString(string: searchString)
+//		#else
+		var str: String?
 		if scanString(searchString, into: &str) {
 			return str as String?
 		}
 		return nil
-		#endif
+//		#endif
 	}
 	
 	public func fhir_scanCharacters(from set: CharacterSet) -> String? {
@@ -992,11 +995,13 @@ extension Scanner {
 	
 	public func fhir_scanInt() -> Int? {
 		var int = 0
-		#if os(Linux)
-		let flag = scanInteger(&int)
-		#else
+        
+        //TME: don't need this compiler directive anymore in swift 4
+//		#if os(Linux)
+//		let flag = scanInteger(&int)
+//		#else
 		let flag = scanInt(&int)
-		#endif
+//		#endif
 		return flag ? int : nil
 	}
 }

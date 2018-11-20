@@ -967,20 +967,12 @@ extension Scanner {
 	
 	public func fhir_scanString(_ searchString: String) -> String? {
         
-        //TME: don't need this compiler directive anymore in swift 4
+        //TME: don't need  compiler directive anymore in swift 4
 
-		var str: NSString?
+		var str: String?
 		if scanString(searchString, into: &str) {
             
-            if let tmpStr = str {
-                
-                var tmpStr2: String?
-                tmpStr2 = String(tmpStr)
-                
-                return tmpStr2 // str as String?
-            } else {
-                return nil
-            }
+            return str
 			
 		}
 		return nil
@@ -989,19 +981,11 @@ extension Scanner {
 	
 	public func fhir_scanCharacters(from set: CharacterSet) -> String? {
 
-		var str: NSString?
+		var str: String?
 		if scanCharacters(from: set, into: &str) {
             
             
-            if let tmpStr = str {
-                
-                var tmpStr2: String?
-                tmpStr2 = String(tmpStr)
-                
-                return tmpStr2 // str as String?
-            } else {
-                return nil
-            }
+            return str
             
 		}
 		return nil
@@ -1011,7 +995,7 @@ extension Scanner {
 	public func fhir_scanInt() -> Int? {
 		var int = 0
         
-        //TME: don't need this compiler directive anymore in swift 4
+        //TME: don't need  compiler directive anymore in swift 4
 
 		let flag = scanInt(&int)
 

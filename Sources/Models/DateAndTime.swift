@@ -982,7 +982,7 @@ extension Scanner {
 	public func fhir_scanCharacters(from set: CharacterSet) -> String? {
 
 		var str: String?
-		if scanCharacters(from: set, into: &str) {
+		if scanUpToCharacters(from: set, into: &str) {
             return str
 		}
 		return nil

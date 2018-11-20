@@ -1,6 +1,9 @@
 FHIR Swift Classes
 ==================
 
+### TME: updating to work with swift 4. see tags 4.0.x
+
+
 These are [Swift][] classes representing data models of [🔥 FHIR][fhir] elements and resources, compatible with **iOS 8** and **OS X 10.9** and later.
 
 This work is [Apache licensed](LICENSE.txt).

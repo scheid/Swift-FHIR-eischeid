@@ -983,10 +983,7 @@ extension Scanner {
 
 		var str: String?
 		if scanCharacters(from: set, into: &str) {
-            
-            
             return str
-            
 		}
 		return nil
 

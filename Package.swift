@@ -11,7 +11,7 @@ import PackageDescription
 let package = Package(
 	name: "SwiftFHIR",
 	targets: [
-		Target(name: "Models"),
-		Target(name: "Client", dependencies: [.Target(name: "Models")]),
+		.target(name: "Models"),
+		.target(name: "Client", dependencies: [.target(name: "Models")]),
 	]
 )
